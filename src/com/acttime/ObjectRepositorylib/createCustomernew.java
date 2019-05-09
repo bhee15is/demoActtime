@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class createCustomernew {
-	@FindBy(xpath="//input[@name='name']")
+	@FindBy(name="name")
 	private WebElement customerName;
 	@FindBy(xpath="//textarea[@name='description']")
 	private WebElement customerDescEdt;

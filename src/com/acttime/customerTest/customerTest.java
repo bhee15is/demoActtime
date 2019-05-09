@@ -1,4 +1,6 @@
 package com.acttime.customerTest;
+
+
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -37,11 +39,28 @@ public class customerTest extends Baseclass {
 		createCustomernew cp=PageFactory.initElements(driver,createCustomernew.class);
 		cp.createCustomer(CustomerName);
 		/* step: 7verify customer */
-/*	String actSussmsg=pac.getsuccessmsg().toString();
+		/*	String actSussmsg=pac.getsuccessmsg().toString();
 		boolean status=actSussmsg.contains("successfully created.");
 		Assert.assertTrue(status);*/
 	}
-	
-
-
+	@Test
+	public void createCustomerWithDescTest() throws Throwable
+	{
+		String CustomerName=flib.getExcelData("Sheet2",2,0);
+		String CustomerDesc=flib.getExcelData("Sheet2",2,1);
+		/* step3:Navigate to taskpage */
+		Home hp=PageFactory.initElements(driver,Home.class);
+		hp.clickOnTaskImg();
+		/* step4: Navigate to project and Customer page */
+		openTask op=PageFactory.initElements(driver, openTask.class);
+		op.clickOnprojectAndCustlnk();
+		/* step:5 Navigate to create customer page */
+		projectAndCustomer pac=PageFactory.initElements(driver, projectAndCustomer.class);
+		pac.clickOncreateCustmerBtn();
+		/* step:6 create Customer */
+		
+		createCustomernew cp1=PageFactory.initElements(driver,createCustomernew.class);
+		cp1.createCustomer(CustomerName,CustomerDesc);
+		
+	}
 	}
