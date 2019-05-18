@@ -57,7 +57,7 @@ public class customerTest extends Baseclass {
 		/* step:5 Navigate to create customer page */
 		projectAndCustomer pac=PageFactory.initElements(driver, projectAndCustomer.class);
 		pac.clickOncreateCustmerBtn();
-		/* step:6 create Customer */
+		/* step:6 create CustomerWith name and Desc */
 		
 		createCustomernew cp1=PageFactory.initElements(driver,createCustomernew.class);
 		cp1.createCustomer(CustomerName,CustomerDesc);
